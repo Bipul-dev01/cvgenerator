@@ -70,13 +70,13 @@ h1, h3 {
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .myimg {
-    width: 150px;
+    width: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .myimg {
-    width: 130px;
+    width: 200px;
   }
 }
 /* Cards */
