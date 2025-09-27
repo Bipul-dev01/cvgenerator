@@ -57,30 +57,28 @@ h1, h3 {
   object-fit: cover;
 } */
 .myimg {
-  border-radius: 50%;
+  width: 250px;              /* default size */
+  aspect-ratio: 1 / 1;       /* সবসময় height = width */
+  border-radius: 50%;        /* গোল করার জন্য */
   border: 5px solid #3f51b5;
-  width: 220px;          /* default size */
-  height: 220px;
-  object-fit: cover;     /* image proportion ঠিক থাকবে */
-  object-position: center; /* সবসময় center থেকে crop হবে */
+  object-fit: cover;         /* প্রোপোরশন ঠিক রাখবে */
+  object-position: center;   /* সবসময় মাঝখান থেকে crop হবে */
   display: block;
   margin: 0 auto;
 }
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .myimg {
     width: 150px;
-    height: 150px;
   }
 }
 
 @media (max-width: 480px) {
   .myimg {
-    width: 120px;
-    height: 120px;
+    width: 130px;
   }
 }
-
 /* Cards */
 .card {
   border-radius: 15px;
