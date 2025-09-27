@@ -215,7 +215,7 @@ function printCV() {
 function downloadPDF() {
   const cvTemplate = document.getElementById("cv-template");
 
-  // ডাউনলোডের আগে বাটন hide
+  // বাটন hide
   const buttons = cvTemplate.querySelectorAll(".no-pdf");
   buttons.forEach(btn => btn.style.display = "none");
 
@@ -226,16 +226,50 @@ function downloadPDF() {
     margin: [0.2, 0.2, 0.2, 0.2],
     filename: fileName,
     image: { type: "jpeg", quality: 1 },
-    html2canvas: { scale: 1.2, useCORS: true },
+    html2canvas: {
+      scale: window.innerWidth < 768 ? 2 : 1.2, // Mobile এ scale বেশি
+      useCORS: true,
+      scrollX: 0,
+      scrollY: 0
+    },
     jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
   };
 
-  // PDF বানানো
-  html2pdf().set(opt).from(cvTemplate).save().then(() => {
-    // আবার বাটন দেখাও
-    buttons.forEach(btn => btn.style.display = "block");
-  });
+  html2pdf()
+    .set(opt)
+    .from(cvTemplate)
+    .save()
+    .then(() => {
+      // আবার বাটন দেখাও
+      buttons.forEach(btn => btn.style.display = "block");
+    });
 }
+
+
+// function downloadPDF() {
+//   const cvTemplate = document.getElementById("cv-template");
+
+//   // ডাউনলোডের আগে বাটন hide
+//   const buttons = cvTemplate.querySelectorAll(".no-pdf");
+//   buttons.forEach(btn => btn.style.display = "none");
+
+//   let name = document.getElementById("nameT1").innerText || "My-CV";
+//   let fileName = name.replace(/\s+/g, "-") + "-CV.pdf";
+
+//   const opt = {
+//     margin: [0.2, 0.2, 0.2, 0.2],
+//     filename: fileName,
+//     image: { type: "jpeg", quality: 1 },
+//     html2canvas: { scale: 1.2, useCORS: true },
+//     jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+//   };
+
+//   // PDF বানানো
+//   html2pdf().set(opt).from(cvTemplate).save().then(() => {
+//     // আবার বাটন দেখাও
+//     buttons.forEach(btn => btn.style.display = "block");
+//   });
+// }
 
 
 

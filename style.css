@@ -22,7 +22,9 @@ h1, h3 {
   box-sizing: border-box;
   overflow: hidden;
 }
-
+#cv-template * {
+  page-break-inside: avoid;
+}
 
 /* CV Template Heading */
 #cv-template h3 {
