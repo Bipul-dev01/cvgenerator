@@ -49,12 +49,36 @@ h1, h3 {
 }
 
 /* Image */
-.myimg {
+/* .myimg {
   border-radius: 50%;
   border: 5px solid #3f51b5;
   width: 250px;
   height: 250px;
   object-fit: cover;
+} */
+.myimg {
+  border-radius: 50%;
+  border: 5px solid #3f51b5;
+  width: 220px;          /* default size */
+  height: 220px;
+  object-fit: cover;     /* image proportion ঠিক থাকবে */
+  object-position: center; /* সবসময় center থেকে crop হবে */
+  display: block;
+  margin: 0 auto;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .myimg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .myimg {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 /* Cards */
