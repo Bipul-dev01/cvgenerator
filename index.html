@@ -13,6 +13,8 @@
       crossorigin="anonymous"
     />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <title>Resume Generator</title>
   </head>
   <body>
@@ -213,7 +215,6 @@
           <p><strong>Gender:</strong> <span id="genderT"></span></p>
 
           <p><strong>Date of Birth:</strong> <span id="dobT"></span></p>
-
         </div>
 
         <!-- Right -->
@@ -248,11 +249,21 @@
             <div class="card-body"><ul id="aqT"></ul></div>
           </div>
 
-          <div class="text-center mt-4">
+          <!-- <div class="text-center mt-4">
             <button onclick="printCV()" class="btn btn-primary">
               🖨 Print CV
             </button>
+          </div> -->
+
+          <div class="text-center mt-4 no-pdf">
+            <button onclick="printCV()" class="btn btn-primary">
+              🖨 Print CV
+            </button>
+            <button onclick="downloadPDF()" class="btn btn-success ms-2">
+              ⬇ Download as PDF
+            </button>
           </div>
+          
         </div>
       </div>
     </div>

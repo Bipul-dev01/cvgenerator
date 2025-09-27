@@ -133,6 +133,7 @@ function generateCV() {
   document.getElementById("cv-form").style.display = "none";
   document.getElementById("cv-template").style.display = "block";
 
+
   //*******************************************
   // Code for setting image
 
@@ -210,6 +211,35 @@ for (let y = currentYear; y >= 1950; y--) {
 function printCV() {
   window.print();
 }
+
+function downloadPDF() {
+  const cvTemplate = document.getElementById("cv-template");
+
+  // ডাউনলোডের আগে বাটন hide
+  const buttons = cvTemplate.querySelectorAll(".no-pdf");
+  buttons.forEach(btn => btn.style.display = "none");
+
+  let name = document.getElementById("nameT1").innerText || "My-CV";
+  let fileName = name.replace(/\s+/g, "-") + "-CV.pdf";
+
+  const opt = {
+    margin: [0.2, 0.2, 0.2, 0.2],
+    filename: fileName,
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: { scale: 1.2, useCORS: true },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+  };
+
+  // PDF বানানো
+  html2pdf().set(opt).from(cvTemplate).save().then(() => {
+    // আবার বাটন দেখাও
+    buttons.forEach(btn => btn.style.display = "block");
+  });
+}
+
+
+
+
 
 //****************************************************************
 
