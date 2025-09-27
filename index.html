@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     />
 
+    <!-- Download as PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <title>Resume Generator</title>
@@ -183,6 +184,7 @@
           </div>
         </div>
       </div>
+
       <div class="text-center mt-4">
         <button onclick="generateCV()" class="btn btn-primary btn-lg">
           🚀 Generate CV
@@ -229,31 +231,25 @@
           <!-- Objective -->
 
           <div class="card mt-3">
-            <div class="background py-1 px-2"><h3>Objective</h3></div>
+            <div class="background label"><h3>Objective</h3></div>
             <div class="card-body"><p id="objectiveT"></p></div>
           </div>
 
           <!-- Work Experience -->
 
           <div class="card mt-3">
-            <div class="background py-1 px-2"><h3>Work Experience</h3></div>
+            <div class="background label"><h3>Work Experience</h3></div>
             <div class="card-body"><ul id="weT"></ul></div>
           </div>
 
           <!-- Academic Qualification -->
 
           <div class="card mt-3">
-            <div class="background py-1 px-2">
+            <div class="background label">
               <h3>Academic Qualification</h3>
             </div>
             <div class="card-body"><ul id="aqT"></ul></div>
           </div>
-
-          <!-- <div class="text-center mt-4">
-            <button onclick="printCV()" class="btn btn-primary">
-              🖨 Print CV
-            </button>
-          </div> -->
 
           <div class="text-center mt-4 no-pdf">
             <button onclick="printCV()" class="btn btn-primary">
@@ -267,14 +263,6 @@
         </div>
       </div>
     </div>
-
-    <!-- **************************************************** -->
-
-    <!-- <p id="numbers" class="numbers">One</p>
-    <p id="numbers" class="numbers">Two</p>
-    <p id="numbers" class="numbers">Three</p>
-
-    <h1 id="outPut"></h1> -->
 
     <script src="script.js"></script>
 
